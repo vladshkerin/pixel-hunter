@@ -1,5 +1,3 @@
-'use strict';
-
 const KEY_CODES = {
   LEFT_KEYDOWN: 37,
   RIGHT_KEYDOWN: 39,
