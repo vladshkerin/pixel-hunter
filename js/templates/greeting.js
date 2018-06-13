@@ -1,4 +1,8 @@
+// Экран приветствия
+
 import {getElementFromTemplate} from '../createDOM';
+import {drawBlock} from '../drawBlock';
+import rules from './rules';
 
 const greetingElem = getElementFromTemplate(`
   <div class="greeting central--blur">
@@ -24,5 +28,8 @@ const greetingElem = getElementFromTemplate(`
       <a href="https://vk.com/htmlacademy" class="social-link  social-link--vk">Вконтакте</a>
     </div>
   </footer>`);
+
+const greetingContinueElem = greetingElem.querySelector(`.greeting__continue`);
+greetingContinueElem.addEventListener(`click`, () => drawBlock(rules));
 
 export default greetingElem;

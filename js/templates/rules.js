@@ -1,4 +1,9 @@
+// Экран с правилами игры
+
 import {getElementFromTemplate} from '../createDOM';
+import {drawBlock} from '../drawBlock';
+import gameOne from './gameOne';
+import greeting from './greeting';
 
 const rulesElem = getElementFromTemplate(`
   <header class="header">
@@ -35,5 +40,20 @@ const rulesElem = getElementFromTemplate(`
       <a href="https://vk.com/htmlacademy" class="social-link  social-link--vk">Вконтакте</a>
     </div>
   </footer>`);
+
+const rulesBtnElem = rulesElem.querySelector(`.rules__button`);
+rulesBtnElem.addEventListener(`click`, () => drawBlock(gameOne));
+
+const rulesInputElem = rulesElem.querySelector(`.rules__input`);
+rulesInputElem.addEventListener(`input`, (evt) => {
+  if (evt.target.value.length > 0) {
+    rulesBtnElem.removeAttribute(`disabled`);
+  } else {
+    rulesBtnElem.setAttribute(`disabled`, `true`);
+  }
+});
+
+const backElem = rulesElem.querySelector(`.back`);
+backElem.addEventListener(`click`, () => drawBlock(greeting));
 
 export default rulesElem;

@@ -1,4 +1,8 @@
+// Экран с результатами
+
 import {getElementFromTemplate} from '../createDOM';
+import {drawBlock} from '../drawBlock';
+import gameThree from './gameThree';
 
 const statsElem = getElementFromTemplate(`
   <header class="header">
@@ -119,5 +123,8 @@ const statsElem = getElementFromTemplate(`
       <a href="https://vk.com/htmlacademy" class="social-link  social-link--vk">Вконтакте</a>
     </div>
   </footer>`);
+
+const backElem = statsElem.querySelector(`.back`);
+backElem.addEventListener(`click`, () => drawBlock(gameThree));
 
 export default statsElem;

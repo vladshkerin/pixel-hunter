@@ -1,4 +1,8 @@
+// Первый экран
+
 import {getElementFromTemplate} from '../createDOM';
+import {drawBlock} from '../drawBlock';
+import greeting from './greeting';
 
 const introElem = getElementFromTemplate(`
   <div id="main" class="central__content">
@@ -18,5 +22,8 @@ const introElem = getElementFromTemplate(`
       <a href="https://vk.com/htmlacademy" class="social-link  social-link--vk">Вконтакте</a>
     </div>
   </footer>`);
+
+const introAsteriskElem = introElem.querySelector(`.intro__asterisk`);
+introAsteriskElem.addEventListener(`click`, () => drawBlock(greeting));
 
 export default introElem;

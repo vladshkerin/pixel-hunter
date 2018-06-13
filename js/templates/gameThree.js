@@ -1,4 +1,9 @@
+// Экран третьей игры
+
 import {getElementFromTemplate} from '../createDOM';
+import {drawBlock} from '../drawBlock';
+import stats from './stats.js';
+import gameTwo from './gameTwo';
 
 const gameThreeElem = getElementFromTemplate(`
   <header class="header">
@@ -53,5 +58,14 @@ const gameThreeElem = getElementFromTemplate(`
       <a href="https://vk.com/htmlacademy" class="social-link  social-link--vk">Вконтакте</a>
     </div>
   </footer>`);
+
+gameThreeElem.querySelectorAll(`.game__option`).forEach((el) => {
+  el.addEventListener(`click`, () => {
+    drawBlock(stats);
+  });
+});
+
+const backElem = gameThreeElem.querySelector(`.back`);
+backElem.addEventListener(`click`, () => drawBlock(gameTwo));
 
 export default gameThreeElem;
