@@ -1,5 +1,5 @@
 import {assert} from 'chai';
-import {countingScores} from './countingScores';
+import {countingScores} from '../countingScores';
 
 const dataProvider = [
   {

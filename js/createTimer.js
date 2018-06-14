@@ -1,7 +1,7 @@
 const createTimer = (time) => {
   if (typeof time !== `number` || time <= 0 ||
     (time ^ 0) !== time || time === Infinity) {
-    throw new Error(`Invalid argument function: 'time'`);
+    throw new Error(`Invalid argument function: 'createTimer'`);
   }
 
   return {
