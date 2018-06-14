@@ -1,7 +1,7 @@
 // Функция создания элемента из шаблона.
 export const getElementFromTemplate = (template) => {
   if (!template) {
-    throw new Error(`Invalid argument function`);
+    throw new Error(`Invalid argument function: 'getElementFromTemplate'`);
   }
 
   const container = document.createElement(`div`);
