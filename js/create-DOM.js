@@ -1,4 +1,5 @@
-// Функция создания элемента из шаблона.
+// Функция создания элемента из шаблона
+
 export const getElementFromTemplate = (template) => {
   if (!template) {
     throw new Error(`Invalid argument function: 'getElementFromTemplate'`);

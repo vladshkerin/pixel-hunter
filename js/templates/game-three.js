@@ -1,9 +1,9 @@
 // Экран третьей игры
 
-import {getElementFromTemplate} from '../createDOM';
-import {drawBlock} from '../drawBlock';
+import {getElementFromTemplate} from '../create-DOM';
+import {drawBlock} from '../draw-block';
 import stats from './stats.js';
-import gameTwo from './gameTwo';
+import gameTwo from './game-two';
 import getHeaderTemplate from './header';
 import getFooterTemplate from './footer';
 import initialState from '../data';

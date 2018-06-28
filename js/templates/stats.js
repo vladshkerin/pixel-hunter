@@ -1,8 +1,8 @@
 // Экран с результатами
 
-import {getElementFromTemplate} from '../createDOM';
-import {drawBlock} from '../drawBlock';
-import gameThree from './gameThree';
+import {getElementFromTemplate} from '../create-DOM';
+import {drawBlock} from '../draw-block';
+import gameThree from './game-three';
 import getHeaderTemplate from './header';
 import getFooterTemplate from './footer';
 import initialState from '../data';

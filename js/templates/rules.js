@@ -1,8 +1,8 @@
 // Экран с правилами игры
 
-import {getElementFromTemplate} from '../createDOM';
-import {drawBlock} from '../drawBlock';
-import gameOne from './gameOne';
+import {getElementFromTemplate} from '../create-DOM';
+import {drawBlock} from '../draw-block';
+import gameOne from './game-one';
 import greeting from './greeting';
 
 const rulesElem = getElementFromTemplate(`
