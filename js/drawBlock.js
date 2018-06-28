@@ -1,4 +1,5 @@
-// Функция отрисовки переданного блока на страницу.
+// Функция отрисовки переданного блока на страницу
+
 export const drawBlock = (elem) => {
   if (!elem) {
     throw new Error(`Invalid argument function`);

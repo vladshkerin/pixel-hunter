@@ -6,9 +6,10 @@ import gameTwoElem from './gameTwo';
 import rules from './rules';
 import getHeaderTemplate from './header';
 import getFooterTemplate from './footer';
+import initialState from '../data';
 
 const gameOneElem = getElementFromTemplate(`
-  ${getHeaderTemplate()}
+  ${getHeaderTemplate(initialState)}
   <div class="game">
     <p class="game__task">Угадайте для каждого изображения фото или рисунок?</p>
     <form class="game__content">

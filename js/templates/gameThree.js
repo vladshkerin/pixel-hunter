@@ -6,9 +6,10 @@ import stats from './stats.js';
 import gameTwo from './gameTwo';
 import getHeaderTemplate from './header';
 import getFooterTemplate from './footer';
+import initialState from '../data';
 
 const gameThreeElem = getElementFromTemplate(`
-  ${getHeaderTemplate()}
+  ${getHeaderTemplate(initialState)}
   <div class="game">
     <p class="game__task">Найдите рисунок среди изображений</p>
     <form class="game__content  game__content--triple">

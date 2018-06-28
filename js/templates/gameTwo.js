@@ -7,9 +7,10 @@ import gameThree from './gameThree';
 import gameOne from './gameOne';
 import getHeaderTemplate from './header';
 import getFooterTemplate from './footer';
+import initialState from '../data';
 
 const gameTwoElem = getElementFromTemplate(`
-  ${getHeaderTemplate()}
+  ${getHeaderTemplate(initialState)}
   <div class="game">
     <p class="game__task">Угадай, фото или рисунок?</p>
     <form class="game__content  game__content--wide">

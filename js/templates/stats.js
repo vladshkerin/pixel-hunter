@@ -5,9 +5,10 @@ import {drawBlock} from '../drawBlock';
 import gameThree from './gameThree';
 import getHeaderTemplate from './header';
 import getFooterTemplate from './footer';
+import initialState from '../data';
 
 const statsElem = getElementFromTemplate(`
-  ${getHeaderTemplate(false)}
+  ${getHeaderTemplate(initialState, false)}
   <div class="result">
     <h1>Победа!</h1>
     <table class="result__table">
