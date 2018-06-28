@@ -1,7 +1,6 @@
 // Экран с результатами
 
-import {getElementFromTemplate} from '../create-DOM';
-import {drawBlock} from '../draw-block';
+import {drawBlock, getElementFromTemplate} from '../utilites-DOM';
 import gameThree from './game-three';
 import getHeaderTemplate from './header';
 import getFooterTemplate from './footer';

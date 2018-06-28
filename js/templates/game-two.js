@@ -1,7 +1,6 @@
 // Экран второй игры
 
-import {getElementFromTemplate} from '../create-DOM';
-import {drawBlock} from '../draw-block';
+import {drawBlock, getElementFromTemplate} from '../utilites-DOM';
 import {isChecked} from "../utils";
 import gameThree from './game-three';
 import gameOne from './game-one';

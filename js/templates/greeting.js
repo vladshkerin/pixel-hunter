@@ -1,7 +1,6 @@
 // Экран приветствия
 
-import {getElementFromTemplate} from '../create-DOM';
-import {drawBlock} from '../draw-block';
+import {drawBlock, getElementFromTemplate} from '../utilites-DOM';
 import rules from './rules';
 import getFooterTemplate from './footer';
 

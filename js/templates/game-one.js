@@ -1,7 +1,6 @@
 // Экран первой игры
 
-import {getElementFromTemplate} from '../create-DOM';
-import {drawBlock} from '../draw-block';
+import {drawBlock, getElementFromTemplate} from '../utilites-DOM';
 import gameTwoElem from './game-two';
 import rules from './rules';
 import getHeaderTemplate from './header';

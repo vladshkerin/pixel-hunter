@@ -1,6 +1,6 @@
 // Главный модуль
 
-import {drawBlock} from './draw-block';
+import {drawBlock} from './utilites-DOM';
 import intro from './templates/intro';
 
 drawBlock(intro);

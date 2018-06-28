@@ -1,7 +1,6 @@
 // Первый экран
 
-import {getElementFromTemplate} from '../create-DOM';
-import {drawBlock} from '../draw-block';
+import {drawBlock, getElementFromTemplate} from '../utilites-DOM';
 import greeting from './greeting';
 
 const introElem = getElementFromTemplate(`
