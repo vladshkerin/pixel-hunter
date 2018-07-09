@@ -6,12 +6,12 @@ import gameThree from './game-three';
 import gameOne from './game-one';
 import getHeaderTemplate from './header';
 import getFooterTemplate from './footer';
-import initialState from '../data';
+import {initialState, questions} from '../data';
 
 const gameTwoElem = getElementFromTemplate(`
   ${getHeaderTemplate(initialState)}
   <div class="game">
-    <p class="game__task">Угадай, фото или рисунок?</p>
+    <p class="game__task">${questions[`question-` + initialState.question].text}</p>
     <form class="game__content  game__content--wide">
       <div class="game__option">
         <img src="http://placehold.it/705x455" alt="Option 1" width="705" height="455">

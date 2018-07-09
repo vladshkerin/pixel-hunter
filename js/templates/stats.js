@@ -4,7 +4,7 @@ import {drawBlock, getElementFromTemplate} from '../utilites-DOM';
 import gameThree from './game-three';
 import getHeaderTemplate from './header';
 import getFooterTemplate from './footer';
-import initialState from '../data';
+import {initialState} from '../data';
 
 const statsElem = getElementFromTemplate(`
   ${getHeaderTemplate(initialState, false)}

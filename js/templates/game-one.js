@@ -5,12 +5,12 @@ import gameTwoElem from './game-two';
 import rules from './rules';
 import getHeaderTemplate from './header';
 import getFooterTemplate from './footer';
-import initialState from '../data';
+import {initialState, questions} from '../data';
 
 const gameOneElem = getElementFromTemplate(`
   ${getHeaderTemplate(initialState)}
   <div class="game">
-    <p class="game__task">Угадайте для каждого изображения фото или рисунок?</p>
+    <p class="game__task">${questions[`question-` + initialState.question].text}</p>
     <form class="game__content">
       <div class="game__option">
         <img src="http://placehold.it/468x458" alt="Option 1" width="468" height="458">

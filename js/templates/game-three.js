@@ -5,12 +5,12 @@ import stats from './stats.js';
 import gameTwo from './game-two';
 import getHeaderTemplate from './header';
 import getFooterTemplate from './footer';
-import initialState from '../data';
+import {initialState, questions} from '../data';
 
 const gameThreeElem = getElementFromTemplate(`
   ${getHeaderTemplate(initialState)}
   <div class="game">
-    <p class="game__task">Найдите рисунок среди изображений</p>
+    <p class="game__task">${questions[`question-` + initialState.question].text}</p>
     <form class="game__content  game__content--triple">
       <div class="game__option">
         <img src="http://placehold.it/304x455" alt="Option 1" width="304" height="455">
