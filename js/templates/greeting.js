@@ -1,8 +1,10 @@
-// Экран приветствия
+/** **************************************************************
+ *************** Модуль экрана приветствия ***********************
+ ************************************************************** **/
 
 import {drawBlock, getElementFromTemplate} from '../utilites-DOM';
-import rules from './rules';
-import getFooterTemplate from './footer';
+import getFooterTemplate from './footer-template';
+import rulesElem from './rules';
 
 const greetingElem = getElementFromTemplate(`
   <div class="greeting central--blur">
@@ -21,6 +23,6 @@ const greetingElem = getElementFromTemplate(`
   ${getFooterTemplate()}`);
 
 const greetingContinueElem = greetingElem.querySelector(`.greeting__continue`);
-greetingContinueElem.addEventListener(`click`, () => drawBlock(rules));
+greetingContinueElem.addEventListener(`click`, () => drawBlock(rulesElem));
 
 export default greetingElem;

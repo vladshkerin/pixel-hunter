@@ -1,6 +1,8 @@
-// Главный модуль
+/** **************************************************************
+ *************** Главный модуль **********************************
+ ************************************************************** **/
 
 import {drawBlock} from './utilites-DOM';
-import intro from './templates/intro';
+import introElem from './templates/intro';
 
-drawBlock(intro);
+drawBlock(introElem);

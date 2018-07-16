@@ -1,7 +1,10 @@
-// Функция создания элемента из шаблона
+/** **************************************************************
+ *************** Модуль утилит для обработки DOM элементов *******
+ ************************************************************** **/
 
 const central = document.querySelector(`.central`);
 
+// Функция создания элемента из шаблона
 const getElementFromTemplate = (template) => {
   if (!template) {
     throw new Error(`Invalid argument function: 'getElementFromTemplate'`);
