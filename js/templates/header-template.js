@@ -1,6 +1,8 @@
-// Шаблон заголовка сайта
+/** **************************************************************
+ *************** Модуль шаблона заголовка сайта ******************
+ ************************************************************** **/
 
-const getHeaderTemplate = (state, isFull = true) => {
+const getHeaderTemplate = (data, isFull = true) => {
   let result = `
     <header class="header">
       <div class="header__back">
@@ -9,14 +11,14 @@ const getHeaderTemplate = (state, isFull = true) => {
           <img src="img/logo_small.svg" width="101" height="44">
         </button>
       </div>`;
-  if (isFull) {
+  if (isFull && data !== null) {
     result += `
-      <h1 class="game__timer">${state.time}</h1>
+      <h1 class="game__timer">${data.time}</h1>
       <div class="game__lives">
-        ${new Array(3 - state.lives)
+        ${new Array(3 - data.lives)
           .fill(`<img src="img/heart__empty.svg" class="game__heart" alt="Life" width="32" height="32">`)
           .join(``)}
-        ${new Array(state.lives)
+        ${new Array(data.lives)
           .fill(`<img src="img/heart__full.svg" class="game__heart" alt="Life" width="32" height="32">`)
           .join(``)}
         </div>
