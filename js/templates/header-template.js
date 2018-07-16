@@ -2,7 +2,7 @@
  *************** Модуль шаблона заголовка сайта ******************
  ************************************************************** **/
 
-const getHeaderTemplate = (data, isFull = true) => {
+export default (data, isFull = true) => {
   let result = `
     <header class="header">
       <div class="header__back">
@@ -30,5 +30,3 @@ const getHeaderTemplate = (data, isFull = true) => {
 
   return result;
 };
-
-export default getHeaderTemplate;

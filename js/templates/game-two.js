@@ -1,56 +1,57 @@
-// Экран второй игры
+/** **************************************************************
+ *************** Модуль экрана второй игры ***********************
+ ************************************************************** **/
 
 import {drawBlock, getElementFromTemplate} from '../utilites-DOM';
-import {isChecked} from "../utils";
-import gameThree from './game-three';
-import gameOne from './game-one';
-import getHeaderTemplate from './header';
-import getFooterTemplate from './footer';
-import {initialState, questions} from '../data';
+import {isChecked} from '../utils';
+import getHeaderTemplate from './header-template';
+import getFooterTemplate from './footer-template';
+import getStatsTemplate from './stats-template';
+import gameThreeElem from './game-three';
+import gameOneElem from './game-one';
+import data from '../data';
 
-const gameTwoElem = getElementFromTemplate(`
-  ${getHeaderTemplate(initialState)}
+const getFormTemplate = (answers) => `
+  ${[...answers].map((answer, index) => `
+    <div class="game__option">
+      <img src=${answer.image} alt="Option ${index + 1}" width="705" height="455">
+      <label class="game__answer  game__answer--photo">
+        <input name="question${index + 1}" type="radio" value="photo">
+        <span>Фото</span>
+      </label>
+      <label class="game__answer  game__answer--wide  game__answer--paint">
+        <input name="question${index + 1}" type="radio" value="paint">
+        <span>Рисунок</span>
+      </label>
+    </div>`)
+  .join(``)}`;
+
+const getContentTemplate = (question, level) => `
   <div class="game">
-    <p class="game__task">${questions[`question-` + initialState.question].text}</p>
+    <p class="game__task">${question.text}</p>
     <form class="game__content  game__content--wide">
-      <div class="game__option">
-        <img src="http://placehold.it/705x455" alt="Option 1" width="705" height="455">
-        <label class="game__answer  game__answer--photo">
-          <input name="question1" type="radio" value="photo">
-          <span>Фото</span>
-        </label>
-        <label class="game__answer  game__answer--wide  game__answer--paint">
-          <input name="question1" type="radio" value="paint">
-          <span>Рисунок</span>
-        </label>
-      </div>
+      ${getFormTemplate(question.answers[level])}
     </form>
     <div class="stats">
-      <ul class="stats">
-        <li class="stats__result stats__result--wrong"></li>
-        <li class="stats__result stats__result--slow"></li>
-        <li class="stats__result stats__result--fast"></li>
-        <li class="stats__result stats__result--correct"></li>
-        <li class="stats__result stats__result--wrong"></li>
-        <li class="stats__result stats__result--unknown"></li>
-        <li class="stats__result stats__result--slow"></li>
-        <li class="stats__result stats__result--unknown"></li>
-        <li class="stats__result stats__result--fast"></li>
-        <li class="stats__result stats__result--unknown"></li>
-      </ul>
+      ${getStatsTemplate(data.stats)}
     </div>
-  </div>
+  </div>`;
+
+const gameTwoElem = getElementFromTemplate(`
+  ${getHeaderTemplate(data)}
+  ${getContentTemplate(data.questions[data.level + 1], data.level + 1)}
   ${getFooterTemplate()}`);
 
-gameTwoElem.querySelectorAll(`.game__answer`).forEach((el) => {
+const gameAnswerElem = gameTwoElem.querySelectorAll(`.game__answer`);
+gameAnswerElem.forEach((el) => {
   el.addEventListener(`click`, () => {
     if (isChecked(el, `question1`)) {
-      drawBlock(gameThree);
+      drawBlock(gameThreeElem);
     }
   });
 });
 
 const backElem = gameTwoElem.querySelector(`.back`);
-backElem.addEventListener(`click`, () => drawBlock(gameOne));
+backElem.addEventListener(`click`, () => drawBlock(gameOneElem));
 
 export default gameTwoElem;

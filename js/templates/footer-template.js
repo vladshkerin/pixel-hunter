@@ -2,7 +2,7 @@
  *************** Модуль шаблона подвала сайта ********************
  ************************************************************** **/
 
-const getFooterTemplate = () => {
+export default () => {
   return `
   <footer class='footer'>
     <a href="https://htmlacademy.ru" class="social-link social-link--academy">HTML Academy</a>
@@ -15,5 +15,3 @@ const getFooterTemplate = () => {
     </div>
   </footer>`;
 };
-
-export default getFooterTemplate;
