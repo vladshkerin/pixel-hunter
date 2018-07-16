@@ -1,43 +1,6 @@
-// Структура данных игры
-
-const initialState = {
-  question: 0,
-  time: 0,
-  lives: 3
-};
-
-const questions = {
-  'question-0': {
-    text: `Угадайте для каждого изображения фото или рисунок?`,
-    answer: 0
-  },
-  'question-1': {
-    text: `Угадай, фото или рисунок?`,
-    answer: 1
-  },
-  'question-2': {
-    text: `Найдите рисунок среди изображений`,
-    answer: 2
-  }
-};
-
-const answers = {
-  'answer-0': {
-    isTrue: false,
-    paint: images.paintings[0],
-    photo: images.photos[0]
-  },
-  'answer-1': {
-    isTrue: false,
-    paint: images.paintings[0],
-    photo: images.photos[0]
-  },
-  'answer-2': {
-    isTrue: false,
-    paint: images.paintings[0],
-    photo: images.photos[0]
-  }
-};
+/** **************************************************************
+ *************** Модуль структуры данных игры ********************
+ ************************************************************** **/
 
 const images = {
   paintings: [
@@ -52,14 +15,67 @@ const images = {
   ],
   photos: [
     // People
-    `http://i.imgur.com/1KegWPz.jpg`,
+    `https://i.imgur.com/1KegWPz.jpg`,
 
     // Animals
     `https://i.imgur.com/DiHM5Zb.jpg`,
 
     // Nature
-    `http://i.imgur.com/DKR1HtB.jpg`
+    `https://i.imgur.com/DKR1HtB.jpg`
   ]
 };
 
-export {initialState, questions, answers, images};
+const answers = [
+  [
+    {
+      isTrue: false,
+      image: images.photos[0]
+    },
+    {
+      isTrue: false,
+      image: images.paintings[0]
+    }
+  ],
+  [
+    {
+      isTrue: false,
+      image: images.paintings[1]
+    }
+  ],
+  [
+    {
+      isTrue: false,
+      image: images.photos[1]
+    },
+    {
+      isTrue: false,
+      image: images.photos[2]
+    },
+    {
+      isTrue: false,
+      image: images.paintings[2]
+    }
+  ]
+];
+
+const questions = [
+  {
+    text: `Угадайте для каждого изображения фото или рисунок?`,
+    answers
+  },
+  {
+    text: `Угадай, фото или рисунок?`,
+    answers
+  },
+  {
+    text: `Найдите рисунок среди изображений`,
+    answers
+  }
+];
+
+export default {
+  level: 0,
+  time: 0,
+  lives: 3,
+  questions
+};
