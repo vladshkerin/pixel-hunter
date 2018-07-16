@@ -2,6 +2,19 @@
  *************** Модуль структуры данных игры ********************
  ************************************************************** **/
 
+const stats = [
+  `wrong`,
+  `slow`,
+  `fast`,
+  `correct`,
+  `wrong`,
+  `unknown`,
+  `slow`,
+  `unknown`,
+  `fast`,
+  `unknown`
+];
+
 const images = {
   paintings: [
     // People
@@ -77,5 +90,6 @@ export default {
   level: 0,
   time: 0,
   lives: 3,
-  questions
+  questions,
+  stats
 };
